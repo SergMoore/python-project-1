@@ -1,41 +1,30 @@
-import brain_games.cli
-import random
-import prompt
-from brain_games.scripts.brain_games import main_greeting
+from brain_games.engine import generate_a_num, start_game
 
 
 def is_even(int_num):
-    if int_num % 2 == 0:
+    if int(int_num) % 2 == 0:
         return "yes"
     else:
         return "no"
 
 
+def generate_questions():
+    rounds_number = 3
+    list_of_questions = []
+    for i in range(rounds_number):
+        list_of_questions.append(generate_a_num())
+    return list_of_questions
+
+
+def form_answers_list(list_of_questions):
+    list_of_answers = []
+    for i in range(len(list_of_questions)):
+        list_of_answers.append(is_even(int(list_of_questions[i])))
+    return list_of_answers
+
+
 def brain_even_game():
-    main_greeting()
-    user_name = brain_games.cli.welcome_user()
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    number_of_questions = 3
-    current_question_num = 1
-    is_last_question = False
-    while current_question_num <= number_of_questions:
-        if current_question_num == number_of_questions:
-            is_last_question = True
-        else:
-            is_last_question = False
-        generated_num = random.randint(1, 100)
-        correct_answer = is_even(generated_num)
-        print(f'Question: {generated_num}')
-        guess_answer = prompt.string("Your answer: ")
-        if correct_answer == guess_answer.lower() and not is_last_question:
-            print("Correct!")
-            current_question_num += 1
-        elif correct_answer == guess_answer.lower() and is_last_question:
-            print("Correct!")
-            print(f"Congratulations, {user_name}!")
-            break
-        else:
-            print(f"'{guess_answer}' is wrong answer ;(. "
-                  f"Correct answer was '{correct_answer}'.")
-            print(f"Let's try again, {user_name}!")
-            break
+    game_rules = 'Answer "yes" if the number is even, otherwise answer "no".'
+    questions_list = generate_questions()
+    answers_list = form_answers_list(questions_list)
+    start_game(game_rules, questions_list, answers_list)
