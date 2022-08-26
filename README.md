@@ -5,3 +5,5 @@
 https://asciinema.org/a/lNW2aIyBw3fYih9nMtXMW2JWO
 # Step 6 asciinema (brain-calc)
 https://asciinema.org/a/nPAoHPdBfxbnRUIi270DOwODi
+# Step 7 asciinema (brain-gcd)
+https://asciinema.org/a/8ctXBaLdChuooQZeURwQZekUw
