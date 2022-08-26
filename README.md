@@ -7,3 +7,5 @@ https://asciinema.org/a/lNW2aIyBw3fYih9nMtXMW2JWO
 https://asciinema.org/a/nPAoHPdBfxbnRUIi270DOwODi
 # Step 7 asciinema (brain-gcd)
 https://asciinema.org/a/8ctXBaLdChuooQZeURwQZekUw
+# Step 8 asciinema (brain-progression)
+https://asciinema.org/a/iB9JEMP94EtNwRGIu4itOy5kQ
