@@ -18,7 +18,7 @@ def generate_arithmet_progression():
         else:
             current_element = str(a0 + i * d)
         progression = f"{progression} {current_element}"
-    return progression
+    return progression.strip()
 
 
 def find_element_of_progr(str_expression):
