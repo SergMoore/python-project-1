@@ -1,7 +1,16 @@
-__pycache__
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Distribution / packaging
 dist/
-.venv/
-.coverage
+
+# Unit test / coverage reports
 coverage.xml
+.coverage
 .pytest_cache/
-.vim
+
+# Environments
+.venv
+venv/
+.env
+env/

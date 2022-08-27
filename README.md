@@ -2,7 +2,7 @@
 [![Actions Status](https://github.com/SergMoore/python-project-49/workflows/hexlet-check/badge.svg)](https://github.com/SergMoore/python-project-49/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/08b954d361ad6c5e5c88/maintainability)](https://codeclimate.com/github/SergMoore/python-project-49/maintainability)
 ### Project description
-«Mind Games» is a set of five console games based on popular mobile brain training apps.
+«Brain Games» is a set of five console games based on popular mobile brain training apps.
 Each game asks questions to be answered. After three correct answers a game is passed. Wrong answers terminate a game and propose to start it again
 ### Games list
 - brain-calc. Arithmetic calculations
