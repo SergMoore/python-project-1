@@ -1,20 +1,18 @@
 import random
 
-from brain_games.engine import start_game
-
 
 def generate_arithmet_progression():
-    (min_border_for_a0_d, max_border_for_a0_d) = (1, 15)
-    (min_members_number, max_members_number) = (5, 10)
-    a0 = random.randint(min_border_for_a0_d, max_border_for_a0_d)
-    d = random.randint(min_border_for_a0_d, max_border_for_a0_d)
-    members_num = random.randint(min_members_number, max_members_number)
-    hidden_member = ".."
+    (MIN_BORDER_FOR_a0_d, MAX_BORDER_FOR_a0_d) = (1, 15)
+    (MIN_MEMBERS_COUNT, MAX_MEMBERS_COUNT) = (5, 10)
+    a0 = random.randint(MIN_BORDER_FOR_a0_d, MAX_BORDER_FOR_a0_d)
+    d = random.randint(MIN_BORDER_FOR_a0_d, MAX_BORDER_FOR_a0_d)
+    members_num = random.randint(MIN_MEMBERS_COUNT, MAX_MEMBERS_COUNT)
+    HIDDEN_MEMBER = ".."
     hidden_member_index = random.randint(0, members_num - 1)
     progression = ""
     for i in range(members_num):
         if i == hidden_member_index:
-            current_element = hidden_member
+            current_element = HIDDEN_MEMBER
         else:
             current_element = str(a0 + i * d)
         progression = f"{progression} {current_element}"
@@ -24,7 +22,8 @@ def generate_arithmet_progression():
 def find_element_of_progr(str_expression):
     series = str_expression.split()
     last_i = len(series) - 1
-    hidden_i = series.index("..")
+    HIDDEN_MEMBER = ".."
+    hidden_i = series.index(HIDDEN_MEMBER)
     if hidden_i == last_i:
         return int(2 * int(series[last_i - 1]) - int(series[last_i - 2]))
     elif hidden_i == 0:
@@ -34,23 +33,16 @@ def find_element_of_progr(str_expression):
 
 
 def generate_questions():
-    rounds_number = 3
+    ROUNDS_COUNT = 3
     list_of_questions = []
-    for i in range(rounds_number):
+    for i in range(ROUNDS_COUNT):
         progression = generate_arithmet_progression()
         list_of_questions.append(progression)
     return list_of_questions
 
 
-def form_answers_list(list_of_questions):
+def form_answers(list_of_questions):
     list_of_answers = []
     for i in range(len(list_of_questions)):
         list_of_answers.append(find_element_of_progr(list_of_questions[i]))
     return list_of_answers
-
-
-def brain_progression_game():
-    game_rules = 'What number is missing in the progression?'
-    questions_list = generate_questions()
-    answers_list = form_answers_list(questions_list)
-    start_game(game_rules, questions_list, answers_list)

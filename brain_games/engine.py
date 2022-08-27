@@ -6,9 +6,9 @@ import brain_games.cli
 
 
 def generate_a_num():
-    min_num = 1
-    max_num = 100
-    return random.randint(min_num, max_num)
+    MIN_NUM = 1
+    MAX_NUM = 100
+    return random.randint(MIN_NUM, MAX_NUM)
 
 
 def ask_game_question(question_body):
@@ -28,11 +28,11 @@ def start_game(game_rules, questions_list, valid_answers_list):
     main_greeting()
     user_name = brain_games.cli.welcome_user()
     print(game_rules)
-    rounds_number = 3
+    ROUNDS_COUNT = 3
     current_round = 1
     is_last_round = False
-    while current_round <= rounds_number:
-        if current_round == rounds_number:
+    while current_round <= ROUNDS_COUNT:
+        if current_round == ROUNDS_COUNT:
             is_last_round = True
         question = questions_list[current_round - 1]
         cor_answer = valid_answers_list[current_round - 1]

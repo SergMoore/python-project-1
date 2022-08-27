@@ -1,6 +1,6 @@
 import random
 
-from brain_games.engine import generate_a_num, start_game
+from brain_games.engine import generate_a_num
 
 
 def generate_math_operation():
@@ -21,9 +21,9 @@ def calc_from_str(str_expression):
 
 
 def generate_questions():
-    rounds_number = 3
+    ROUNDS_COUNT = 3
     list_of_questions = []
-    for i in range(rounds_number):
+    for i in range(ROUNDS_COUNT):
         num1 = generate_a_num()
         num2 = generate_a_num()
         math_oper = generate_math_operation()
@@ -32,15 +32,8 @@ def generate_questions():
     return list_of_questions
 
 
-def form_answers_list(list_of_questions):
+def form_answers(list_of_questions):
     list_of_answers = []
     for i in range(len(list_of_questions)):
         list_of_answers.append(calc_from_str(list_of_questions[i]))
     return list_of_answers
-
-
-def brain_calc_game():
-    game_rules = 'What is the result of the expression?'
-    questions_list = generate_questions()
-    answers_list = form_answers_list(questions_list)
-    start_game(game_rules, questions_list, answers_list)
