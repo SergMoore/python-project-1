@@ -7,7 +7,7 @@ def is_prime(natur_num):
     if natur_num == 1 or natur_num % 2 == 0:
         return natur_num == 2
     div = 3
-    while div <= math.sqrt(natur_num) and natur_num % div == 0:
+    while div <= math.sqrt(natur_num) and natur_num % div != 0:
         div += 2
     return div * div > natur_num
 
