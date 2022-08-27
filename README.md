@@ -27,7 +27,7 @@ Each game asks questions to be answered. After three correct answers a game is p
 $ git clone git@github.com:SergMoore/python-project-49.git
 ```
 - run the command `$ make build`
-- run the command `$ make install`
+- run the command `$ make package-install` for the first installation or `$ make package-reinstall` to reinstall the package
 - launch choosen game:
    - brain-calc: `$ brain-calc`
    - brain-progression: `$ brain-progression`
