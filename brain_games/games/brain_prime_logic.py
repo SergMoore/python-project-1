@@ -1,6 +1,6 @@
 import math
 
-from brain_games.engine import generate_a_num
+from brain_games.engine import generate_a_num, start_game
 
 
 def is_prime(natur_num):
@@ -33,3 +33,10 @@ def form_answers(list_of_questions):
     for i in range(len(list_of_questions)):
         list_of_answers.append(is_prime_to_str(list_of_questions[i]))
     return list_of_answers
+
+
+def start_brain_prime():
+    game_rules = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+    questions = generate_questions()
+    answers = form_answers(questions)
+    start_game(game_rules, questions, answers)

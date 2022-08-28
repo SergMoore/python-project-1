@@ -1,6 +1,9 @@
 import random
 
 
+from brain_games.engine import start_game
+
+
 def generate_arithmet_progression():
     (MIN_BORDER_FOR_a0_d, MAX_BORDER_FOR_a0_d) = (1, 15)
     (MIN_MEMBERS_COUNT, MAX_MEMBERS_COUNT) = (5, 10)
@@ -46,3 +49,10 @@ def form_answers(list_of_questions):
     for i in range(len(list_of_questions)):
         list_of_answers.append(find_element_of_progr(list_of_questions[i]))
     return list_of_answers
+
+
+def start_brain_progression():
+    game_rules = 'What number is missing in the progression?'
+    questions = generate_questions()
+    answers = form_answers(questions)
+    start_game(game_rules, questions, answers)

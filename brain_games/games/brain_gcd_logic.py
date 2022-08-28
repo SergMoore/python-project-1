@@ -1,4 +1,4 @@
-from brain_games.engine import generate_a_num
+from brain_games.engine import generate_a_num, start_game
 
 
 def find_gcd_from_str(str_expression):
@@ -28,3 +28,10 @@ def form_answers(list_of_questions):
     for i in range(len(list_of_questions)):
         list_of_answers.append(find_gcd_from_str(list_of_questions[i]))
     return list_of_answers
+
+
+def start_brain_gcd():
+    game_rules = 'Find the greatest common divisor of given numbers.'
+    questions = generate_questions()
+    answers = form_answers(questions)
+    start_game(game_rules, questions, answers)

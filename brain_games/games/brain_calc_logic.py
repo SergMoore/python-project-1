@@ -1,6 +1,6 @@
 import random
 
-from brain_games.engine import generate_a_num
+from brain_games.engine import generate_a_num, start_game
 
 
 def generate_math_operation():
@@ -37,3 +37,10 @@ def form_answers(list_of_questions):
     for i in range(len(list_of_questions)):
         list_of_answers.append(calc_from_str(list_of_questions[i]))
     return list_of_answers
+
+
+def start_brain_calc():
+    game_rules = 'What is the result of the expression?'
+    questions = generate_questions()
+    answers = form_answers(questions)
+    start_game(game_rules, questions, answers)
