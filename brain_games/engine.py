@@ -24,7 +24,7 @@ def is_correct_answer(valid_answer, guess_answer):
         return False
 
 
-def start_game(game_rules, questions_list, valid_answers_list):
+def start_game(game_rules, questions, valid_answers):
     main_greeting()
     user_name = brain_games.cli.welcome_user()
     print(game_rules)
@@ -34,8 +34,8 @@ def start_game(game_rules, questions_list, valid_answers_list):
     while current_round <= ROUNDS_COUNT:
         if current_round == ROUNDS_COUNT:
             is_last_round = True
-        question = questions_list[current_round - 1]
-        cor_answer = valid_answers_list[current_round - 1]
+        question = questions[current_round - 1]
+        cor_answer = valid_answers[current_round - 1]
         guess_answer = ask_game_question(question).lower()
         if is_correct_answer(cor_answer, guess_answer) and not is_last_round:
             print("Correct!")

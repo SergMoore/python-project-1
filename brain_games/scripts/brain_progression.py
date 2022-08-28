@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-from brain_games.games.brain_progression_logic import generate_questions
-from brain_games.games.brain_progression_logic import form_answers
-from brain_games.engine import start_game
+import brain_games.games.brain_progression_logic
+from brain_games.engine import start_game as start_brain_progression
 
 
 def main():
-    GAME_RULES = 'What number is missing in the progression?'
-    questions = generate_questions()
-    answers = form_answers(questions)
-    start_game(GAME_RULES, questions, answers)
+    game_rules = 'What number is missing in the progression?'
+    questions = brain_games.games.brain_progression_logic.generate_questions()
+    answers = brain_games.games.brain_progression_logic.form_answers(questions)
+    start_brain_progression(game_rules, questions, answers)
 
 
 if __name__ == '__main__':
