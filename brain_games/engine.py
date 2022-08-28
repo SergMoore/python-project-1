@@ -24,28 +24,45 @@ def is_correct_answer(valid_answer, guess_answer):
         return False
 
 
+def define_game_status(is_valid_answer, round_num):
+    ROUNDS_COUNT = 3
+    if is_valid_answer and round_num != ROUNDS_COUNT:
+        return "go_next_round"
+    elif is_valid_answer and round_num == ROUNDS_COUNT:
+        return "won"
+    else:
+        return "lost"
+
+
+def apply_user(game_status, user_name, guess_answer, correct_answer):
+    ROUNDS_COUNT = 3
+    ROUNDS_ITERATION = 1
+    if game_status == "go_next_round":
+        print("Correct!")
+        return ROUNDS_ITERATION
+    elif game_status == "won":
+        print("Correct!")
+        print(f"Congratulations, {user_name}!")
+        return ROUNDS_COUNT + ROUNDS_ITERATION
+    elif game_status == "lost":
+        print(f"'{guess_answer}' is wrong answer ;(. "
+              f"Correct answer was '{correct_answer}'.")
+        print(f"Let's try again, {user_name}!")
+        return ROUNDS_COUNT + ROUNDS_ITERATION
+    else:
+        return ROUNDS_COUNT + ROUNDS_ITERATION
+
+
 def start_game(game_rules, questions, valid_answers):
     main_greeting()
     user_name = brain_games.cli.welcome_user()
     print(game_rules)
     ROUNDS_COUNT = 3
-    current_round = 1
-    is_last_round = False
-    while current_round <= ROUNDS_COUNT:
-        if current_round == ROUNDS_COUNT:
-            is_last_round = True
-        question = questions[current_round - 1]
-        cor_answer = valid_answers[current_round - 1]
+    round_num = 1
+    while round_num <= ROUNDS_COUNT:
+        question = questions[round_num - 1]
+        cor_answer = valid_answers[round_num - 1]
         guess_answer = ask_game_question(question).lower()
-        if is_correct_answer(cor_answer, guess_answer) and not is_last_round:
-            print("Correct!")
-            current_round += 1
-        elif is_correct_answer(cor_answer, guess_answer) and is_last_round:
-            print("Correct!")
-            print(f"Congratulations, {user_name}!")
-            break
-        else:
-            print(f"'{guess_answer}' is wrong answer ;(. "
-                  f"Correct answer was '{cor_answer}'.")
-            print(f"Let's try again, {user_name}!")
-            break
+        is_valid_answer = is_correct_answer(cor_answer, guess_answer)
+        game_state = define_game_status(is_valid_answer, round_num)
+        round_num += apply_user(game_state, user_name, guess_answer, cor_answer)
