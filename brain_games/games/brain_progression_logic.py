@@ -1,7 +1,5 @@
 import random
 
-from brain_games.engine import start_game
-
 (MIN_BORDER_FOR_a0_d, MAX_BORDER_FOR_a0_d) = (1, 15)
 (MIN_MEMBERS_COUNT, MAX_MEMBERS_COUNT) = (5, 10)
 HIDDEN_MEMBER = '..'
@@ -22,8 +20,3 @@ def generate_q_a_pair():
         progression = f'{progression} {current_element}'
     question = progression.strip()
     return (question, answer)
-
-
-def start_brain_progression():
-    game_title = 'brain-progression'
-    start_game(game_title)

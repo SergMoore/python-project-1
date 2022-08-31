@@ -1,5 +1,4 @@
 import random
-from brain_games.engine import start_game
 
 MIN_NUM_TO_GENERATE = 1
 MAX_NUM_TO_GENERATE = 100
@@ -21,8 +20,3 @@ def generate_q_a_pair():
     elif math_operator == '*':
         answer = num1 * num2
     return (question, answer)
-
-
-def start_brain_calc():
-    game_title = 'brain_calc'
-    start_game(game_title)

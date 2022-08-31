@@ -1,7 +1,5 @@
 import random
 
-from brain_games.games.engine import start_game
-
 MIN_NUM_TO_GENERATE = 1
 MAX_NUM_TO_GENERATE = 100
 
@@ -20,8 +18,3 @@ def generate_q_a_pair():
     question = f'{num1} {num2}'
     answer = find_gcd(num1, num2)
     return (question, answer)
-
-
-def start_brain_gcd():
-    game_title = 'brain-gcd'
-    start_game(game_title)
