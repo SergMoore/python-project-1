@@ -2,12 +2,12 @@
 from brain_games.cli import welcome_user
 
 
-def main_greeting():
+def greet_user():
     print("Welcome to the Brain Games!")
 
 
 def main():
-    main_greeting()
+    greet_user()
     welcome_user()
 
 

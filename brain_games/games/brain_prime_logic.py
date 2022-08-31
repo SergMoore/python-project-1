@@ -1,6 +1,9 @@
 import math
+import random
 
-from brain_games.engine import generate_a_num, start_game
+
+MIN_NUM_TO_GENERATE = 1
+MAX_NUM_TO_GENERATE = 100
 
 
 def is_prime(natur_num):
@@ -12,31 +15,10 @@ def is_prime(natur_num):
     return div * div > natur_num
 
 
-def is_prime_to_str(natur_num):
-    if is_prime(natur_num):
-        return "yes"
+def generate_q_a_pair():
+    question = random.randint(MIN_NUM_TO_GENERATE, MAX_NUM_TO_GENERATE)
+    if is_prime(question):
+        answer = 'yes'
     else:
-        return "no"
-
-
-def generate_questions():
-    ROUNDS_COUNT = 3
-    list_of_questions = []
-    for i in range(ROUNDS_COUNT):
-        num = generate_a_num()
-        list_of_questions.append(num)
-    return list_of_questions
-
-
-def form_answers(list_of_questions):
-    list_of_answers = []
-    for i in range(len(list_of_questions)):
-        list_of_answers.append(is_prime_to_str(list_of_questions[i]))
-    return list_of_answers
-
-
-def start_brain_prime():
-    game_rules = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-    questions = generate_questions()
-    answers = form_answers(questions)
-    start_game(game_rules, questions, answers)
+        answer = 'no'
+    return (str(question), answer)

@@ -1,46 +1,23 @@
 import random
 
-from brain_games.engine import generate_a_num, start_game
+
+MIN_NUM_TO_GENERATE = 1
+MAX_NUM_TO_GENERATE = 100
 
 
-def generate_math_operation():
-    return random.choice(["+", "-", "*"])
+def generate_math_operator():
+    return random.choice(['+', '-', '*'])
 
 
-def calc_from_str(str_expression):
-    elements = str_expression.split()
-    num1 = int(elements[0])
-    num2 = int(elements[2])
-    math_operation = elements[1]
-    if math_operation == "+":
-        return num1 + num2
-    elif math_operation == "-":
-        return num1 - num2
-    elif math_operation == "*":
-        return num1 * num2
-
-
-def generate_questions():
-    ROUNDS_COUNT = 3
-    list_of_questions = []
-    for i in range(ROUNDS_COUNT):
-        num1 = generate_a_num()
-        num2 = generate_a_num()
-        math_oper = generate_math_operation()
-        math_expression = f"{num1} {math_oper} {num2}"
-        list_of_questions.append(math_expression)
-    return list_of_questions
-
-
-def form_answers(list_of_questions):
-    list_of_answers = []
-    for i in range(len(list_of_questions)):
-        list_of_answers.append(calc_from_str(list_of_questions[i]))
-    return list_of_answers
-
-
-def start_brain_calc():
-    game_rules = 'What is the result of the expression?'
-    questions = generate_questions()
-    answers = form_answers(questions)
-    start_game(game_rules, questions, answers)
+def generate_q_a_pair():
+    num1 = random.randint(MIN_NUM_TO_GENERATE, MAX_NUM_TO_GENERATE)
+    num2 = random.randint(MIN_NUM_TO_GENERATE, MAX_NUM_TO_GENERATE)
+    math_operator = generate_math_operator()
+    question = f'{num1} {math_operator} {num2}'
+    if math_operator == '+':
+        answer = num1 + num2
+    elif math_operator == '-':
+        answer = num1 - num2
+    elif math_operator == '*':
+        answer = num1 * num2
+    return (question, answer)
