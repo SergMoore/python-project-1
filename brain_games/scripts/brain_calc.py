@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-from brain_games.engine import start_game
+from brain_games.games.brain_calc_logic import start_brain_calc
 
 
 def main():
-    game_title = 'brain-calc'
-    start_game(game_title)
+    start_brain_calc()
 
 
 if __name__ == '__main__':

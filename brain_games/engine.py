@@ -25,17 +25,18 @@ def print_game_rules(game_title):
         print('What number is missing in the progression?')
 
 
-def generate_specific_q_a_pair(game_title):
+def generate_specific_question_answer_pair(game_title):
     if game_title == 'brain-calc':
-        return brain_games.games.brain_calc_logic.generate_q_a_pair()
+        (q, a) = brain_games.games.brain_calc_logic.generate_q_a_pair()
     elif game_title == 'brain-even':
-        return brain_games.games.brain_even_logic.generate_q_a_pair()
+        (q, a) = brain_games.games.brain_even_logic.generate_q_a_pair()
     elif game_title == 'brain-gcd':
-        return brain_games.games.brain_gcd_logic.generate_q_a_pair()
+        (q, a) = brain_games.games.brain_gcd_logic.generate_q_a_pair()
     elif game_title == 'brain-prime':
-        return brain_games.games.brain_prime_logic.generate_q_a_pair()
+        (q, a) = brain_games.games.brain_prime_logic.generate_q_a_pair()
     elif game_title == 'brain-progression':
-        return brain_games.games.brain_progression_logic.generate_q_a_pair()
+        (q, a) = brain_games.games.brain_progression_logic.generate_q_a_pair()
+    return (q, a)
 
 
 def ask_game_question(question_body):
@@ -84,7 +85,7 @@ def start_game(game_title):
     print_game_rules(game_title)
     round_num = 1
     while round_num <= ROUNDS_COUNT:
-        question, answer = generate_specific_q_a_pair(game_title)
+        question, answer = generate_specific_question_answer_pair(game_title)
         guess_answer = ask_game_question(question).lower()
         is_correct_answer = is_valid_answer(answer, guess_answer)
         game_state = define_game_status(is_correct_answer, round_num)

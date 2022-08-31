@@ -1,6 +1,7 @@
 import math
 import random
 
+from brain_games.engine import start_game
 
 MIN_NUM_TO_GENERATE = 1
 MAX_NUM_TO_GENERATE = 100
@@ -22,3 +23,8 @@ def generate_q_a_pair():
     else:
         answer = 'no'
     return (str(question), answer)
+
+
+def start_brain_prime():
+    game_title = 'brain-prime'
+    start_game(game_title)
