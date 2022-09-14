@@ -2,7 +2,7 @@
 name = "flake8"
 version = "5.0.4"
 description = "the modular source code checker: pep8 pyflakes and co"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6.1"
 
@@ -15,7 +15,7 @@ pyflakes = ">=2.5.0,<2.6.0"
 name = "mccabe"
 version = "0.7.0"
 description = "McCabe checker, plugin for flake8"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -31,7 +31,7 @@ python-versions = ">=3.3"
 name = "pycodestyle"
 version = "2.9.1"
 description = "Python style guide checker"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -39,14 +39,14 @@ python-versions = ">=3.6"
 name = "pyflakes"
 version = "2.5.0"
 description = "passive checker of Python programs"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "13e0bed119584e83812065613f3c1c15f4efc8630e0c5a448b8a3bf3be1ad6dc"
+content-hash = "c07bf786de82ef313d3d6949ad9a466986f5a116000f82f02d39c9b5034f456e"
 
 [metadata.files]
 flake8 = [

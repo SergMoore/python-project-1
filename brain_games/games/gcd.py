@@ -1,7 +1,8 @@
 import random
 import math
 
-GAME_RULES = 'Find the greatest common divisor of given numbers.'
+
+GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.'
 MIN_NUM_TO_GENERATE = 1
 MAX_NUM_TO_GENERATE = 100
 

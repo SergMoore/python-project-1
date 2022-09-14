@@ -1,7 +1,9 @@
 import math
 import random
 
-GAME_RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+
+GAME_DESCRIPTION = 'Answer "yes" if given number is prime. '
+'Otherwise answer "no".'
 MIN_NUM_TO_GENERATE = 1
 MAX_NUM_TO_GENERATE = 100
 

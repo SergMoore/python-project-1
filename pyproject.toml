@@ -3,7 +3,7 @@ name = "hexlet-code"
 version = "0.1.0"
 description = "Set of five console games based on popular mobile brain training apps"
 authors = ["SergMoore <sergmoore@yandex.ru>"]
-repository = "git+https://github.com/SergMoore/python-project-49.git"
+repository = "git+https://github.com/SergMoore/python-project-1.git"
 classifiers = [
     "Development Status :: 1 - Planning",
     "Environment :: Console",
