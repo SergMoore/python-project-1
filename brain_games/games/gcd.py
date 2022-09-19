@@ -12,4 +12,4 @@ def generate_game_round():
     num2 = random.randint(MIN_NUM_TO_GENERATE, MAX_NUM_TO_GENERATE)
     question = f'{num1} {num2}'
     answer = math.gcd(num1, num2)
-    return (question, answer)
+    return (question, str(answer))

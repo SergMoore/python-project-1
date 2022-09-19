@@ -27,4 +27,4 @@ def generate_game_round():
             current_element = str(first_member + i * step)
         progression = f'{progression} {current_element}'
     question = progression.strip()
-    return (question, answer)
+    return (question, str(answer))

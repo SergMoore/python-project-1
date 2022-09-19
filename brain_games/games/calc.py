@@ -27,4 +27,4 @@ def generate_game_round():
     math_operator = generate_math_operator()
     question = f'{num1} {math_operator} {num2}'
     answer = calculate_binary_operation(num1, num2, math_operator)
-    return (question, answer)
+    return (question, str(answer))
