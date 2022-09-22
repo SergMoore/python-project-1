@@ -1,15 +1,13 @@
 import prompt
 
-from brain_games.scripts.brain_games import greet_user
-import brain_games.cli
-
 
 ROUNDS_COUNT = 3
 
 
 def start_game(game):
-    greet_user()
-    user_name = brain_games.cli.welcome_user()
+    print('Welcome to the Brain Games!')
+    user_name = prompt.string('May I have your name? ')
+    print(f'Hello, {user_name}!')
     print(game.GAME_DESCRIPTION)
     round_num = 1
     while round_num <= ROUNDS_COUNT:
@@ -25,6 +23,4 @@ def start_game(game):
             break
         if round_num == ROUNDS_COUNT:
             print(f'Congratulations, {user_name}!')
-            break
-        else:
-            round_num += 1
+        round_num += 1
